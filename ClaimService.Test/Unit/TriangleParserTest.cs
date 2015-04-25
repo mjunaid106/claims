@@ -26,7 +26,7 @@ namespace ClaimService.Test.Unit
             public void Initialise()
             {
                 _dataSource = new TextDataSource("input.csv", "output.csv");
-                _dataFormatter = new CsvDataFormatter(',');
+                _dataFormatter = new CsvDataFormatter(',', true);
                 _dataReadResult = new DataReadResult();
 
                 _goodData = new List<string>

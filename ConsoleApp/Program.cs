@@ -19,7 +19,7 @@ namespace ConsoleApp
                 IEnumerable<string> inputData = textDataSource.Read();
                 textDataSource.Data = inputData;
 
-                IDataFormatter csvDataFormatter = new CsvDataFormatter(',');
+                IDataFormatter csvDataFormatter = new CsvDataFormatter(',', true);
                 IDataReadResult dataReadResult = new DataReadResult();
 
                 IParser triangleParser = new TriangleParser(textDataSource, csvDataFormatter, dataReadResult);

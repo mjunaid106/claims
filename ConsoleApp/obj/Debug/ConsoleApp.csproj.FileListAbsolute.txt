@@ -18,6 +18,3 @@ C:\Users\Junaid\OneDrive\Work\TW\ConsoleApp\bin\Debug\ConsoleApp.exe
 C:\Users\Junaid\OneDrive\Work\TW\ConsoleApp\bin\Debug\ConsoleApp.pdb
 C:\Users\Junaid\OneDrive\Work\TW\ConsoleApp\bin\Debug\ClaimsService.dll
 C:\Users\Junaid\OneDrive\Work\TW\ConsoleApp\bin\Debug\ClaimsService.pdb
-C:\Users\Junaid\Source\Repos\TW\ConsoleApp\bin\Debug\ConsoleApp.exe.config
-C:\Users\Junaid\Source\Repos\TW\ConsoleApp\obj\Debug\ConsoleApp.exe
-C:\Users\Junaid\Source\Repos\TW\ConsoleApp\obj\Debug\ConsoleApp.pdb
