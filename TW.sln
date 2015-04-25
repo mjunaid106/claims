@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{2C4238FA-3A27-4F2D-8F0F-84A3EBF3CC01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimsService", "ClaimsService\ClaimsService.csproj", "{E8797EA4-FCC9-4651-A37E-0D055150C827}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimService.Test", "ClaimService.Test\ClaimService.Test.csproj", "{1DD5DE85-35E5-4477-99F6-5B8846D09B83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C4238FA-3A27-4F2D-8F0F-84A3EBF3CC01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C4238FA-3A27-4F2D-8F0F-84A3EBF3CC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C4238FA-3A27-4F2D-8F0F-84A3EBF3CC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C4238FA-3A27-4F2D-8F0F-84A3EBF3CC01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8797EA4-FCC9-4651-A37E-0D055150C827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8797EA4-FCC9-4651-A37E-0D055150C827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8797EA4-FCC9-4651-A37E-0D055150C827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8797EA4-FCC9-4651-A37E-0D055150C827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD5DE85-35E5-4477-99F6-5B8846D09B83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD5DE85-35E5-4477-99F6-5B8846D09B83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD5DE85-35E5-4477-99F6-5B8846D09B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD5DE85-35E5-4477-99F6-5B8846D09B83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
