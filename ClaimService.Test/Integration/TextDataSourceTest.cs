@@ -35,26 +35,30 @@ namespace ClaimService.Test.Integration
                 "Non-Comp, 1993, 1993, 100.0"
             };
 
-
-            /*
-                        1990, 4
-                        Comp, 0, 0, 0, 0, 0, 0, 0, 110, 280, 200
-                        Non-Comp, 45.2, 110, 110, 147, 50, 125, 150, 55, 140, 100
-                       */
             File.WriteAllLines("input.csv", data);
 
             _processedData = new List<string>
-                {
-                   "1990, 4",
-                   "Comp, 0, 0, 0, 0, 0, 0, 0, 110, 280, 200",
-                   "Non-Comp, 45.2, 110, 110, 147, 50, 125, 150, 55, 140, 100"
-                };
+            {
+                "1990, 4",
+                "Comp, 0, 0, 0, 0, 0, 0, 0, 110, 280, 200",
+                "Non-Comp, 45.2, 110, 110, 147, 50, 125, 150, 55, 140, 100"
+            };
         }
 
         [TestMethod]
         public void Read()
         {
             _dataSource = new TextDataSource(InputFilePath, OutputFilePath);
+            IEnumerable<string> readData = _dataSource.Read();
+            Assert.AreEqual(13, readData.Count());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FileNotFoundException))]
+        public void Read_InvalidFilePath()
+        {
+            const string invalidFile = "invalid_input.csv";
+            _dataSource = new TextDataSource(invalidFile, OutputFilePath);
             IEnumerable<string> readData = _dataSource.Read();
             Assert.AreEqual(13, readData.Count());
         }

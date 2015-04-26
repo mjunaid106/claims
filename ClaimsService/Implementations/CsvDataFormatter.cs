@@ -1,6 +1,6 @@
 ﻿using ClaimsService.Interfaces;
 
-namespace ClaimsService.Entities
+namespace ClaimsService.Implementations
 {
     public class CsvDataFormatter : IDataFormatter
     {

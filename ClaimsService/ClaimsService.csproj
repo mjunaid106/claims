@@ -39,10 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\CsvDataFormatter.cs" />
-    <Compile Include="Entities\DataReadResult.cs" />
+    <Compile Include="Implementations\CsvDataFormatter.cs" />
+    <Compile Include="Implementations\DataReadResult.cs" />
     <Compile Include="Interfaces\IDataReadResult.cs" />
-    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Implementations\Product.cs" />
     <Compile Include="Implementations\TextDataSource.cs" />
     <Compile Include="Implementations\TriangleParser.cs" />
     <Compile Include="Interfaces\IDataFormatter.cs" />

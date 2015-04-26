@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ClaimsService.Entities;
+using System.IO;
 using ClaimsService.Implementations;
 using ClaimsService.Interfaces;
 
@@ -16,6 +16,10 @@ namespace ConsoleApp
 
             try
             {
+                Console.WriteLine("Input Data:");
+                Console.WriteLine("===========");
+                Console.WriteLine(File.ReadAllText(inputFile));
+
                 IEnumerable<string> inputData = textDataSource.Read();
                 textDataSource.Data = inputData;
 
@@ -24,13 +28,18 @@ namespace ConsoleApp
 
                 IParser triangleParser = new TriangleParser(textDataSource, csvDataFormatter, dataReadResult);
                 dataReadResult = triangleParser.ReadDataSource();
-                triangleParser.PopulateMissingData(dataReadResult.Products, dataReadResult.FirstYear, dataReadResult.LastYear);
+                triangleParser.PopulateData(dataReadResult.Products, dataReadResult.FirstYear, dataReadResult.LastYear);
 
                 IEnumerable<string> dataToWrite = triangleParser.GetDataForOutput(dataReadResult.Products, csvDataFormatter);
 
                 textDataSource.Write(dataToWrite, dataReadResult.FirstYear, dataReadResult.NumberOfYears);
-
-                Console.Write("File processed");
+                
+                Console.WriteLine();
+                Console.WriteLine("File processed");
+                Console.WriteLine();
+                Console.WriteLine("Output Data:");
+                Console.WriteLine("===========");
+                Console.WriteLine(File.ReadAllText(outputFile));
             }
             catch (Exception ex)
             {

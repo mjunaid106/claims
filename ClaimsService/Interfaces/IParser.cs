@@ -12,7 +12,7 @@ namespace ClaimsService.Interfaces
 
         IDataReadResult ReadDataSource();
 
-        void PopulateMissingData(IEnumerable<IProduct> products, int firstYear, int lastYear);
+        void PopulateData(IEnumerable<IProduct> products, int firstYear, int lastYear);
 
         IEnumerable<string> GetDataForOutput(IEnumerable<IProduct> products, IDataFormatter dataFormatter);
     }

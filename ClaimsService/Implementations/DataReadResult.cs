@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ClaimsService.Interfaces;
 
-namespace ClaimsService.Entities
+namespace ClaimsService.Implementations
 {
     public class DataReadResult : IDataReadResult
     {
@@ -12,5 +12,20 @@ namespace ClaimsService.Entities
         public int NumberOfYears { get { return (LastYear - FirstYear) + 1; } }
 
         public IEnumerable<IProduct> Products { get; set; }
+
+        public bool IsSuccess { get; set; }
+
+        public void Reset()
+        {
+            FirstYear = 0;
+            LastYear = 0;
+            Products = null;
+            IsSuccess = false;
+        }
+
+        public DataReadResult()
+        {
+            IsSuccess = false;
+        }
     }
 }

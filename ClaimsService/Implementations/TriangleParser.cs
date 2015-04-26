@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClaimsService.Entities;
 using ClaimsService.Interfaces;
 
 namespace ClaimsService.Implementations
@@ -27,12 +26,16 @@ namespace ClaimsService.Implementations
             int minYear = 0;
             int maxYear = 0;
             var sourceData = DataFormatter.IsHeaderRowPresent ? DataSource.Data.Skip(1) : DataSource.Data;
+            bool isReadSuccess = false;
+            DataReadResult.Products = products;
+
             foreach (string line in sourceData)
             {
                 string name;
                 int originYear;
                 int developmentYear;
                 double value;
+
                 try
                 {
                     string[] data = line.Split(DataFormatter.Delimiter);
@@ -40,16 +43,14 @@ namespace ClaimsService.Implementations
                     originYear = Convert.ToInt32(data[1]);
                     developmentYear = Convert.ToInt32(data[2]);
                     value = Convert.ToDouble(data[3]);
+                    isReadSuccess = true;
                 }
-                catch (FormatException fe)
+                catch (Exception ex)
                 {
-                    // Log
-                    throw fe;
-                }
-                catch (IndexOutOfRangeException ie)
-                {
-                    // Log
-                    throw ie;
+                    // Log data read exception and exit (do not process current file/data).
+
+                    DataReadResult.Reset();
+                    return DataReadResult;
                 }
 
                 minYear = Math.Min(minYear == 0 ? originYear : minYear, originYear);
@@ -72,15 +73,17 @@ namespace ClaimsService.Implementations
                 {
                     product.Rows[originYear] = new SortedList<int, double> { { developmentYear, value } };
                 }
+                DataReadResult.FirstYear = minYear;
+                DataReadResult.LastYear = maxYear;
+
             }
 
-            DataReadResult.FirstYear = minYear;
-            DataReadResult.LastYear = maxYear;
-            DataReadResult.Products = products;
+            DataReadResult.IsSuccess = isReadSuccess;
+
             return DataReadResult;
         }
 
-        public void PopulateMissingData(IEnumerable<IProduct> products, int firstYear, int lastYear)
+        public void PopulateData(IEnumerable<IProduct> products, int firstYear, int lastYear)
         {
             foreach (IProduct product in products)
             {

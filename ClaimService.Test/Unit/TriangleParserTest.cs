@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClaimsService.Entities;
 using ClaimsService.Implementations;
 using ClaimsService.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -198,33 +197,33 @@ namespace ClaimService.Test.Unit
             }
 
             [TestMethod]
-            [ExpectedException(typeof(FormatException))]
             public void ReadDataSource_WithInvalidData_Exception()
             {
                 _dataSource.Data = _invalidFormatData;
 
                 _parser = new TriangleParser(_dataSource, _dataFormatter, _dataReadResult);
                 _dataReadResult = _parser.ReadDataSource();
+                Assert.AreEqual(false, _dataReadResult.IsSuccess);
             }
 
             [TestMethod]
-            [ExpectedException(typeof(IndexOutOfRangeException))]
             public void ReadDataSource_WithNoCommaData_Exception()
             {
                 _dataSource.Data = _invalidDataWithNoComma;
 
                 _parser = new TriangleParser(_dataSource, _dataFormatter, _dataReadResult);
                 _dataReadResult = _parser.ReadDataSource();
+                Assert.AreEqual(false, _dataReadResult.IsSuccess);
             }
 
             [TestMethod]
-            [ExpectedException(typeof(IndexOutOfRangeException))]
             public void ReadDataSource_WithMissingColumn_Exception()
             {
                 _dataSource.Data = _missingColumn;
 
                 _parser = new TriangleParser(_dataSource, _dataFormatter, _dataReadResult);
                 _dataReadResult = _parser.ReadDataSource();
+                Assert.AreEqual(false, _dataReadResult.IsSuccess);
             }
 
             [TestMethod]
@@ -234,7 +233,7 @@ namespace ClaimService.Test.Unit
 
                 _parser = new TriangleParser(_dataSource, _dataFormatter, _dataReadResult);
 
-                _parser.PopulateMissingData(_dataReadResult.Products, _dataReadResult.FirstYear, _dataReadResult.LastYear);
+                _parser.PopulateData(_dataReadResult.Products, _dataReadResult.FirstYear, _dataReadResult.LastYear);
 
                 Assert.AreEqual(1990, _dataReadResult.FirstYear);
                 Assert.AreEqual(1993, _dataReadResult.LastYear);

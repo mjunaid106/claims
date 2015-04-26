@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ClaimsService.Interfaces;
 
-namespace ClaimsService.Entities
+namespace ClaimsService.Implementations
 {
     public class Product : IProduct
     {

@@ -12,6 +12,8 @@ namespace ClaimsService.Interfaces
 
         IEnumerable<IProduct> Products { get; set; }
 
-        
+        bool IsSuccess { get; set; }
+
+        void Reset();
     }
 }
