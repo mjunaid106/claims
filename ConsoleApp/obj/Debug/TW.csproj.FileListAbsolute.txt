@@ -1,8 +1,0 @@
-c:\users\muhammad.junaid\documents\visual studio 2013\Projects\TW\TW\bin\Debug\TW.exe.config
-c:\users\muhammad.junaid\documents\visual studio 2013\Projects\TW\TW\bin\Debug\TW.exe
-c:\users\muhammad.junaid\documents\visual studio 2013\Projects\TW\TW\bin\Debug\TW.pdb
-c:\users\muhammad.junaid\documents\visual studio 2013\Projects\TW\TW\obj\Debug\TW.csprojResolveAssemblyReference.cache
-c:\users\muhammad.junaid\documents\visual studio 2013\Projects\TW\TW\obj\Debug\TW.exe
-c:\users\muhammad.junaid\documents\visual studio 2013\Projects\TW\TW\obj\Debug\TW.pdb
-C:\Users\muhammad.junaid\documents\visual studio 2013\Projects\TW\TW\bin\Debug\CSVProcessor.dll
-C:\Users\muhammad.junaid\documents\visual studio 2013\Projects\TW\TW\bin\Debug\CSVProcessor.pdb
