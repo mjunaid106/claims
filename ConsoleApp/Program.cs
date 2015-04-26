@@ -10,8 +10,9 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            const string inputFile = "Files\\input.csv";
-            const string outputFile = "Files\\output.csv";
+            string path = string.Format("{0}\\..\\..\\Files\\", Environment.CurrentDirectory);
+            string inputFile = string.Format("{0}input.csv", path);
+            string outputFile = string.Format("{0}output.csv", path);
             IDataSource textDataSource = new TextDataSource(inputFile, outputFile);
 
             try
@@ -33,7 +34,7 @@ namespace ConsoleApp
                 IEnumerable<string> dataToWrite = triangleParser.GetDataForOutput(dataReadResult.Products, csvDataFormatter);
 
                 textDataSource.Write(dataToWrite, dataReadResult.FirstYear, dataReadResult.NumberOfYears);
-                
+
                 Console.WriteLine();
                 Console.WriteLine("File processed");
                 Console.WriteLine();
